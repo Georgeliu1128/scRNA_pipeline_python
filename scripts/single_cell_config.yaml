@@ -1,0 +1,58 @@
+# -----------------------------
+# Input data
+# -----------------------------
+inputs:
+  h5_paths:
+    - "/home/zliu9/zliu9/single_cell/mtd1/MTD1.h5"
+    - "/home/zliu9/zliu9/single_cell/mttreated2/MTTEATED2.h5"
+  sample_names:
+    - "MTD1"
+    - "MTTEATED2"
+
+# -----------------------------
+# QC parameters
+# -----------------------------
+qc:
+  mt_prefix: "MT-"
+  mt_thresh: 15
+  min_genes: 300
+  max_genes: 6000
+  min_cells: 3
+
+# -----------------------------
+# Normalization + HVG
+# -----------------------------
+hvg:
+  n_top_genes: 3000
+  batch_key: "batch"
+
+# -----------------------------
+# Batch correction backend
+# Options: none, harmony, bbknn
+# -----------------------------
+batch:
+  backend: "harmony"
+  n_pcs: 50
+  batch_key: "batch"
+
+# -----------------------------
+# Embedding + clustering
+# -----------------------------
+embedding:
+  n_neighbors: 15
+  n_pcs: 40
+  resolution: 0.5
+
+# -----------------------------
+# Differential expression
+# -----------------------------
+de:
+  groupby: "leiden"
+  method: "wilcoxon"
+
+# -----------------------------
+# Output
+# -----------------------------
+output:
+  prefix: "mtd_mttreated"
+  save_h5ad: true
