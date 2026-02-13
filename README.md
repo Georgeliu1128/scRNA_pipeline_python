@@ -1,5 +1,6 @@
 # Single cell RNA seq analysis pipeline in python
-Table of Contents
+
+Table of Contents \
 -[Single‑Cell RNA‑seq Processing Pipeline](#single_cell_rna_seq_processing_pipeline) \
 -[Why this pipeline exists](#why_this_pipeline_exists) \
 -[What the pipeline does](#what_the_pipeline_does) \
@@ -30,7 +31,7 @@ Mitochondrial percentage
 Total counts
 Number of detected genes
 
-It then generates [violin](figures/violin-1.png) and [scatter](figures/scatter-1.png) plots grouped by batch — the same plots you’d show in a lab meeting to justify filtering thresholds.
+It then generates ![violin](figures/violin-1.png) and ![scatter](figures/scatter-1.png) plots grouped by batch — the same plots you’d show in a lab meeting to justify filtering thresholds.
 Cells are filtered by:
 Mitochondrial content
 Minimum/maximum gene count
@@ -60,7 +61,7 @@ Once the representation is chosen (PCA or Harmony), the pipeline:
 Builds a neighbor graph
 Computes UMAP
 Runs Leiden clustering
-[UMAPs](figures/umap-1.png) are automatically saved and colored by:
+![UMAPs](figures/umap-1.png) are automatically saved and colored by:
 Batch
 Sample
 Cluster
@@ -71,7 +72,7 @@ These are the plots collaborators usually want first.
 The pipeline runs rank_genes_groups (Wilcoxon) and produces:
 
 Summary marker plots
-[A small heatmap of top markers per cluster](figures/heatmap-1.png)
+![A small heatmap of top markers per cluster](figures/heatmap-1.png)
 
 This gives a quick sense of cluster identity and helps guide downstream annotation.
 
@@ -82,7 +83,7 @@ Normalized counts
 HVGs
 PCA / Harmony / BBKNN embeddings
 UMAP coordinates
-[Leiden clusters](figures/rank_genes_groups_leiden-1.png)
+![Leiden clusters](figures/rank_genes_groups_leiden-1.png)
 Marker gene statistics
 
 ## Citations
